@@ -66,6 +66,132 @@ a:hover {
     transform: scale(1.3); /* Magnifies text by 30% */
 }
 
+/* Main Container */
+.coverflow-container {
+    width: 1600px;
+    height: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    perspective: 2000px;
+    background: #111;
+}
+
+/* Cover Flow */
+.coverflow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Images */
+.coverflow img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 480px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,.5);
+    transform-origin: center center;
+    animation: coverflow 20s infinite linear;
+}
+
+/* Image Delays */
+.coverflow img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.coverflow img:nth-child(2) {
+    animation-delay: -4s;
+}
+
+.coverflow img:nth-child(3) {
+    animation-delay: -8s;
+}
+.coverflow img:nth-child(4) {
+    animation-delay: -12s;
+}
+
+.coverflow img:nth-child(5) {
+    animation-delay: -16s;
+}
+
+/* Cover Flow Animation */
+@keyframes coverflow {
+
+    /* Far Right */
+    0% {
+        transform:
+            translate(1000px, -50%)
+            rotateY(-60deg)
+            scale(0.6);
+        opacity: .3;
+        z-index: 1;
+    }
+
+    /* Right */
+    40% {
+        transform:
+            translate(600px, -50%)
+            rotateY(-40deg)
+            scale(0.8);
+        opacity: .7;
+        z-index: 3;
+    }
+
+    /* Center */
+    60% {
+        transform:
+            translate(0, -50%)
+            rotateY(0deg)
+            scale(1.5);
+        opacity: 1;
+        z-index: 20;
+    }
+
+    /* Left */
+    100% {
+        transform:
+            translate(-600px, -50%)
+            rotateY(40deg)
+            scale(0.8);
+        opacity: .7;
+        z-index: 3;
+    }
+
+    /* Far Left */
+    100% {
+        transform:
+            translate(-1000px, -50%)
+            rotateY(60deg)
+            scale(0.6);
+        opacity: .3;
+        z-index: 1;
+    }
+
+    /* Exit */
+    100% {
+        transform:
+            translate(-1400px, -50%)
+            rotateY(75deg)
+            scale(0.4);
+        opacity: 0;
+        z-index: 0;
+    }
+}
+/* Reflection Effect */
+.coverflow img {
+    -webkit-box-reflect:
+        below 8px
+        linear-gradient(
+            transparent,
+            rgba(255,255,255,.15)
+        );
+}
+
+
 
 footer {
     font-size: 25px;
