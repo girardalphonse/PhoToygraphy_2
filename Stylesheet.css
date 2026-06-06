@@ -46,7 +46,10 @@ nav {
             color: #00bfff;
         }
  
-
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
 
 h1, h2 {font-family: "Impact"; font-style: italic}
     /*This text is in italic Impact font*/
