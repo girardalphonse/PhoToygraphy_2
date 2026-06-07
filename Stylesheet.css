@@ -36,7 +36,7 @@ nav {
             color: #FDDA0D;
             text-decoration:underline;
             margin-right: 20px;
-            font-family: impact; italic;
+            font-family: impact; font-style:italic;
             font-size: 25px;
             transition: 0.3s;
            
